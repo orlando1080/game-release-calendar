@@ -4,13 +4,13 @@ import urllib.request
 import bs4 as bs
 
 
-class Scaper:
+class Scraper:
     def __init__(self, site):
         """Create an instance for scaper class."""
         self.site = site
         self.li_tags = []
 
-    def scaper(self):
+    def scraper(self):
         """Scraps data from site."""
         url = self.site
         page = urllib.request.urlopen(url).read()
@@ -21,6 +21,3 @@ class Scaper:
                             r'^(January|February|March|April|May|June|July|August|September|October|November|December)',
                             li_tag.get_text().strip())]
 
-
-ps5 = Scaper('https://gamerant.com/ps5-game-release-dates/')
-ps5.scaper()
